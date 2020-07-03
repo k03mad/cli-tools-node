@@ -25,7 +25,7 @@ const files = versionArg => ({
     ],
 
     'Dockerfile': [
-        /(FROM node:)(?<version>[\d.]+)/,
+        /(FROM node:)(?<version>.+)/,
         `$1${versionArg}`,
     ],
 });
