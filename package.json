@@ -1,0 +1,37 @@
+{
+  "name": "@k03mad/change-node-version",
+  "version": "0.0.1",
+  "maintainers": [
+    "Kirill Molchanov <k03.mad@gmail.com"
+  ],
+  "repository": "k03mad/change-node-version",
+  "bin": {
+    "node-chv": "./app/main.js"
+  },
+  "preferGlobal": true,
+  "engines": {
+    "node": "14"
+  },
+  "dependencies": {
+    "as-table": "1.0.55",
+    "colorette": "1.2.0",
+    "utils-mad": "8.2.2",
+    "yargs": "15.4.0"
+  },
+  "devDependencies": {
+    "eslint": "7.3.1",
+    "eslint-config-k03mad": "5.0.1",
+    "eslint-plugin-jsdoc": "28.6.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-sonarjs": "0.5.0",
+    "eslint-plugin-sort-requires": "2.1.0",
+    "eslint-plugin-unicorn": "20.1.0",
+    "husky": "4.2.5"
+  },
+  "scripts": {
+    "lint": "eslint ./ --report-unused-disable-directives --format=codeframe --ignore-pattern='!.*'",
+    "setup": "npm i"
+  },
+  "license": "Unlicense"
+}
