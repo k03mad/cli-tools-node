@@ -10,28 +10,30 @@
   },
   "preferGlobal": true,
   "engines": {
-    "node": "14"
+    "node": ">=14"
   },
   "dependencies": {
     "as-table": "1.0.55",
-    "colorette": "1.2.0",
-    "utils-mad": "8.2.10",
+    "colorette": "1.2.1",
+    "utils-mad": "9.0.1",
     "yargs": "15.4.0"
   },
   "devDependencies": {
     "eslint": "7.4.0",
-    "eslint-config-k03mad": "5.0.1",
-    "eslint-plugin-jsdoc": "28.6.1",
+    "eslint-config-k03mad": "5.0.2",
+    "eslint-plugin-jsdoc": "29.1.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-sonarjs": "0.5.0",
     "eslint-plugin-sort-requires": "2.1.0",
     "eslint-plugin-unicorn": "20.1.0",
-    "husky": "4.2.5"
+    "husky": "4.2.5",
+    "mocha": "8.0.1"
   },
   "scripts": {
     "lint": "eslint ./ --report-unused-disable-directives --format=codeframe --ignore-pattern='!.*'",
-    "setup": "npm i"
+    "setup": "npm i",
+    "test": "node ./app/main '>=14' && mocha ./tests"
   },
   "license": "Unlicense"
 }

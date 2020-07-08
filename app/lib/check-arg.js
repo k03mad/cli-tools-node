@@ -1,16 +1,17 @@
 'use strict';
 
-const {gray, green} = require('colorette');
-const {request, print} = require('utils-mad');
+const {gray, green, yellow} = require('colorette');
+const {request} = require('utils-mad');
 
-/** @param {string} versionArg */
-module.exports = async versionArg => {
-    !versionArg && print.ex(
-        `The Node.JS version is not specified, example usage:\n${gray('$')} ${green('node-ch 14')}`,
-        {time: false, exit: true},
-    );
+/** @param {string} version */
+module.exports = async version => {
+    if (!version) {
+        throw new Error(
+            `The Node.JS version is not specified, example usage:\n${gray('$')} ${green('node-chv 14')}`,
+        );
+    }
 
-    const {body} = await request.got('https://nodejs.org/dist/');
+    const {body} = await request.cache('https://nodejs.org/dist/', {}, {expire: '1m'});
     const validNodeVersions = new Set(
         body
             .match(/v\d+\.\d+\.\d+/g)
@@ -21,8 +22,9 @@ module.exports = async versionArg => {
             }),
     );
 
-    !validNodeVersions.has(versionArg) && print.ex(
-        'The Node.JS version does not exist',
-        {time: false, exit: true},
-    );
+    if (!validNodeVersions.has(version)) {
+        throw new Error(
+            `The Node.JS version does not exist: ${yellow(version)}`,
+        );
+    }
 };
