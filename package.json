@@ -15,20 +15,20 @@
   "dependencies": {
     "as-table": "1.0.55",
     "colorette": "1.2.1",
-    "utils-mad": "9.1.4",
+    "utils-mad": "9.3.0",
     "yargs": "15.4.1"
   },
   "devDependencies": {
-    "eslint": "7.5.0",
+    "eslint": "7.7.0",
     "eslint-config-k03mad": "5.0.2",
-    "eslint-plugin-jsdoc": "30.0.3",
+    "eslint-plugin-jsdoc": "30.3.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-sonarjs": "0.5.0",
     "eslint-plugin-sort-requires": "2.1.0",
     "eslint-plugin-unicorn": "21.0.0",
     "husky": "4.2.5",
-    "mocha": "8.0.1"
+    "mocha": "8.1.2"
   },
   "scripts": {
     "lint": "eslint ./ --report-unused-disable-directives --format=codeframe --ignore-pattern='!.*'",
