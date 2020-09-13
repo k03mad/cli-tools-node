@@ -15,7 +15,7 @@
   "dependencies": {
     "as-table": "1.0.55",
     "colorette": "1.2.1",
-    "utils-mad": "9.3.1",
+    "utils-mad": "9.3.2",
     "yargs": "16.0.3"
   },
   "devDependencies": {
