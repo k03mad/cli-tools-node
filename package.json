@@ -32,7 +32,7 @@
   },
   "scripts": {
     "lint": "eslint ./ --report-unused-disable-directives --format=codeframe --ignore-pattern='!.*'",
-    "setup": "pnpm i",
+    "setup": "yarn install",
     "test": "node ./app/main '>=14' && mocha ./tests"
   },
   "license": "Unlicense"
