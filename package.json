@@ -6,7 +6,7 @@
   ],
   "repository": "k03mad/change-node-version",
   "bin": {
-    "node-chv": "./app/main.js"
+    "mad-tools-nchv": "./app/main.js"
   },
   "preferGlobal": true,
   "engines": {
