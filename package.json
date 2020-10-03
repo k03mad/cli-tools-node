@@ -15,18 +15,18 @@
   "dependencies": {
     "as-table": "1.0.55",
     "colorette": "1.2.1",
-    "utils-mad": "9.5.0",
+    "utils-mad": "9.5.6",
     "yargs": "16.0.3"
   },
   "devDependencies": {
-    "eslint": "7.9.0",
-    "eslint-config-k03mad": "5.0.2",
-    "eslint-plugin-jsdoc": "30.5.1",
+    "eslint": "7.10.0",
+    "eslint-config-k03mad": "5.0.4",
+    "eslint-plugin-jsdoc": "30.6.3",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-sonarjs": "0.5.0",
     "eslint-plugin-sort-requires": "2.1.0",
-    "eslint-plugin-unicorn": "21.0.0",
+    "eslint-plugin-unicorn": "22.0.0",
     "husky": "4.3.0",
     "mocha": "8.1.3"
   },
