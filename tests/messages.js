@@ -23,7 +23,7 @@ const tests = [
     ['a', 'Error: The Node.JS version does not exist: a'],
     ['13a', 'Error: The Node.JS version does not exist: 13a'],
 
-    ['>=14', '✓ .nvmrc 14.5.0 → 14 - ✓ package.json 14.5.0 → >=14 - ! Dockerfile file does not exist'],
+    ['>=15', '✓ .nvmrc 14.5.0 → 15 - ✓ package.json 14.5.0 → >=15 - ! Dockerfile file does not exist'],
 ];
 
 describe('Version', () => {
