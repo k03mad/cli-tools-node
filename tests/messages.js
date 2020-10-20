@@ -5,9 +5,10 @@ const replaceVersion = require('../app/lib/replace');
 const {options} = require('colorette');
 
 options.enabled = false;
+const currentVer = 15;
 
 const tests = [
-    [13, '✓ .nvmrc 15 → 13 - ✓ package.json >=15 → 13 - ! Dockerfile file does not exist'],
+    [13, `✓ .nvmrc ${currentVer} → 13 - ✓ package.json >=${currentVer} → 13 - ! Dockerfile file does not exist`],
     [12.5, '✓ .nvmrc 13 → 12.5 - ✓ package.json 13 → 12.5 - ! Dockerfile file does not exist'],
 
     ['>=11', '✓ .nvmrc 12.5 → 11 - ✓ package.json 12.5 → >=11 - ! Dockerfile file does not exist'],
@@ -23,7 +24,7 @@ const tests = [
     ['a', 'Error: The Node.JS version does not exist: a'],
     ['13a', 'Error: The Node.JS version does not exist: 13a'],
 
-    ['>=15', '✓ .nvmrc 14.5.0 → 15 - ✓ package.json 14.5.0 → >=15 - ! Dockerfile file does not exist'],
+    [`>=${currentVer}`, `✓ .nvmrc 14.5.0 → ${currentVer} - ✓ package.json 14.5.0 → >=${currentVer} - ! Dockerfile file does not exist`],
 ];
 
 describe('Version', () => {
