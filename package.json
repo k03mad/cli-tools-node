@@ -10,7 +10,7 @@
   },
   "preferGlobal": true,
   "engines": {
-    "node": ">=14"
+    "node": ">=15"
   },
   "dependencies": {
     "as-table": "1.0.55",
