@@ -5,7 +5,7 @@ const replaceVersion = require('../app/lib/replace');
 const {options} = require('colorette');
 
 options.enabled = false;
-const currentVer = 15;
+const currentVer = 14;
 
 const tests = [
     [13, `✓ .nvmrc ${currentVer} → 13 - ✓ package.json >=${currentVer} → 13 - ! Dockerfile file does not exist`],
