@@ -33,7 +33,7 @@
   "scripts": {
     "lint": "eslint ./ --report-unused-disable-directives --format=codeframe --ignore-pattern='!.*'",
     "setup": "yarn install",
-    "test": "node ./app/main '>=14' && mocha ./tests"
+    "test": "node ./app/main '>=15' && mocha ./tests"
   },
   "license": "Unlicense"
 }

@@ -7,7 +7,7 @@ const {options} = require('colorette');
 options.enabled = false;
 
 const tests = [
-    [13, '✓ .nvmrc 14 → 13 - ✓ package.json >=14 → 13 - ! Dockerfile file does not exist'],
+    [13, '✓ .nvmrc 15 → 13 - ✓ package.json >=15 → 13 - ! Dockerfile file does not exist'],
     [12.5, '✓ .nvmrc 13 → 12.5 - ✓ package.json 13 → 12.5 - ! Dockerfile file does not exist'],
 
     ['>=11', '✓ .nvmrc 12.5 → 11 - ✓ package.json 12.5 → >=11 - ! Dockerfile file does not exist'],
