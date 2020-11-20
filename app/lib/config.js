@@ -15,7 +15,7 @@ module.exports = {
     },
 
     'Dockerfile': {
-        replaceString: /(FROM node:)(?<version>.+)/,
-        replaceValue: version => `$1${version}`,
+        replaceString: /(FROM node:)(?<version>[\d.]+)(.+)/,
+        replaceValue: version => `$1${version}$3`,
     },
 };
