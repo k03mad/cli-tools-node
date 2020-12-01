@@ -32,7 +32,7 @@
   "scripts": {
     "lint": "eslint ./ --report-unused-disable-directives --format=codeframe --ignore-pattern='!.*'",
     "setup": "npm i",
-    "test": "node ./app/main '>=12' && mocha ./tests"
+    "test": "node ./app/main '>=14' && mocha ./tests"
   },
   "license": "Unlicense"
 }
