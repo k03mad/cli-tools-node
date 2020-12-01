@@ -1,7 +1,7 @@
 'use strict';
 
-const {gray, green, yellow} = require('colorette');
-const {request} = require('utils-mad');
+const got = require('got');
+const {dim, red, gray, green, yellow} = require('colorette');
 
 /** @param {string} version */
 module.exports = async version => {
@@ -11,7 +11,20 @@ module.exports = async version => {
         );
     }
 
-    const {body} = await request.cache('https://nodejs.org/dist/', {}, {expire: '1m'});
+    let body;
+
+    try {
+        ({body} = await got('https://nodejs.org/dist/', {timeout: 3000}));
+    } catch (err) {
+        console.log([
+            yellow('Cannot check valid NodeJS versions:'),
+            red(err),
+            dim('...skipping\n'),
+        ].join('\n'));
+
+        return;
+    }
+
     const validNodeVersions = new Set(
         body
             .match(/v\d+\.\d+\.\d+/g)

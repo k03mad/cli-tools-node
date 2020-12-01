@@ -1,21 +1,16 @@
 'use strict';
 
 const check = require('./check-arg');
-const files = require('./config');
+const files = require('../../config');
 const {argv} = require('yargs');
 const {blue, green, red, yellow} = require('colorette');
 const {promises: fs} = require('fs');
 
 const grEqual = '>=';
 
-/**
- * @param {string|number} ver
- * @returns {Array[]}
- */
-const replaceVersion = async ver => {
-    const [firstArg] = typeof ver === 'undefined' ? argv._ : [ver];
-    let version = firstArg ? String(firstArg) : firstArg;
-
+/** @returns {Array[]} */
+const replaceVersion = async () => {
+    let version = String(argv._[0]);
     let grEqualFound;
 
     if (version && version.startsWith(grEqual)) {

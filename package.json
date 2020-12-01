@@ -10,12 +10,12 @@
   },
   "preferGlobal": true,
   "engines": {
-    "node": ">=14"
+    "node": ">=12"
   },
   "dependencies": {
     "as-table": "1.0.55",
     "colorette": "1.2.1",
-    "utils-mad": "9.7.7",
+    "got": "11.8.0",
     "yargs": "16.1.1"
   },
   "devDependencies": {
