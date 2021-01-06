@@ -1,12 +1,12 @@
 {
-  "name": "@k03mad/change-node-version",
+  "name": "@k03mad/cli-tools-node",
   "version": "1.2.1",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
   ],
-  "repository": "k03mad/change-node-version",
+  "repository": "k03mad/cli-tools-node",
   "bin": {
-    "mad-tools-nchv": "app/main.js"
+    "mad-node-ver": "app/main.js"
   },
   "preferGlobal": true,
   "engines": {
