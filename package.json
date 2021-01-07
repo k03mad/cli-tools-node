@@ -6,7 +6,7 @@
   ],
   "repository": "k03mad/cli-tools-node",
   "bin": {
-    "mad-node-ver": "app/main.js"
+    "mad_node_ver": "app/main.js"
   },
   "preferGlobal": true,
   "engines": {
