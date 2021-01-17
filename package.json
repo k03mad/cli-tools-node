@@ -1,5 +1,6 @@
 {
   "name": "@k03mad/cli-tools-node",
+  "description": "My CLI tools",
   "version": "1.2.4",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -8,7 +9,6 @@
   "bin": {
     "mad_node_ver": "app/main.js"
   },
-  "preferGlobal": true,
   "engines": {
     "node": ">=12"
   },
@@ -19,14 +19,14 @@
     "yargs": "16.2.0"
   },
   "devDependencies": {
-    "eslint": "7.17.0",
+    "eslint": "7.18.0",
     "eslint-config-k03mad": "6.0.4",
-    "eslint-plugin-jsdoc": "30.7.13",
+    "eslint-plugin-jsdoc": "31.0.5",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-sort-requires": "2.1.0",
-    "eslint-plugin-unicorn": "25.0.1",
-    "husky": "4.3.6"
+    "eslint-plugin-unicorn": "26.0.1",
+    "husky": "4.3.8"
   },
   "scripts": {
     "lint": "eslint ./ --report-unused-disable-directives --format=codeframe --ignore-pattern='!.*'",
