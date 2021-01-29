@@ -16,6 +16,7 @@
     "as-table": "1.0.55",
     "colorette": "1.2.1",
     "got": "11.8.1",
+    "update-notifier": "5.0.1",
     "yargs": "16.2.0"
   },
   "devDependencies": {
