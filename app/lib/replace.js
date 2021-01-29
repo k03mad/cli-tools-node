@@ -10,7 +10,7 @@ const grEqual = '>=';
 
 /** @returns {Array[]} */
 const replaceVersion = async () => {
-    let version = String(argv._[0]);
+    let version = argv._[0] ? String(argv._[0]) : '';
     let grEqualFound;
 
     if (version && version.startsWith(grEqual)) {
