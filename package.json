@@ -6,6 +6,7 @@
     "Kirill Molchanov <k03.mad@gmail.com"
   ],
   "repository": "k03mad/cli-tools-node",
+  "license": "MIT",
   "bin": {
     "mad_node_ver": "app/main.js"
   },
@@ -14,24 +15,23 @@
   },
   "dependencies": {
     "as-table": "1.0.55",
-    "colorette": "1.2.1",
-    "got": "11.8.1",
+    "colorette": "1.2.2",
+    "got": "11.8.2",
     "update-notifier": "5.1.0",
     "yargs": "16.2.0"
   },
   "devDependencies": {
-    "eslint": "7.19.0",
-    "eslint-config-k03mad": "7.0.3",
-    "eslint-plugin-jsdoc": "31.6.1",
+    "@k03mad/eslint-config": "8.0.0",
+    "eslint": "7.21.0",
+    "eslint-plugin-jsdoc": "32.2.0",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-promise": "4.3.1",
     "eslint-plugin-sort-requires": "2.1.0",
-    "eslint-plugin-unicorn": "27.0.0",
+    "eslint-plugin-unicorn": "28.0.2",
     "husky": "4.3.8"
   },
   "scripts": {
     "lint": "eslint ./ --report-unused-disable-directives --format=codeframe --ignore-pattern='!.*'",
     "setup": "npm i"
-  },
-  "license": "Unlicense"
+  }
 }
