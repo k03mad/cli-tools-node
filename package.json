@@ -1,7 +1,7 @@
 {
   "name": "@k03mad/cli-tools-node",
   "description": "My CLI tools",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
   ],
