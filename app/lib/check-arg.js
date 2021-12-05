@@ -1,10 +1,10 @@
-'use strict';
+import utils from '@k03mad/utils';
+import {dim, gray, green, red, yellow} from 'colorette';
 
-const got = require('got');
-const {dim, red, gray, green, yellow} = require('colorette');
+const {request} = utils;
 
 /** @param {string} version */
-module.exports = async version => {
+export default async version => {
     if (!version) {
         throw new Error(
             `The Node.JS version is not specified, example usage:\n${gray('$')} ${green('node-chv 14')}`,
@@ -14,7 +14,7 @@ module.exports = async version => {
     let body;
 
     try {
-        ({body} = await got('https://nodejs.org/dist/', {timeout: 3000}));
+        ({body} = await request.cache('https://nodejs.org/dist/', {}, {expire: '1d'}));
     } catch (err) {
         console.log([
             yellow('Cannot check valid NodeJS versions:'),

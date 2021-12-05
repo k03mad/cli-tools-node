@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 
-'use strict';
+import asTable from 'as-table';
 
-const asTable = require('as-table');
-const pkg = require('../package.json');
-const replaceVersion = require('./lib/replace');
-const updateNotifier = require('update-notifier');
-
-updateNotifier({pkg}).notify();
+import replaceVersion from './lib/replace.js';
 
 replaceVersion()
     .then(res => console.log(asTable(res)))

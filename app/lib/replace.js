@@ -1,15 +1,17 @@
-'use strict';
+import {blue, green, red, yellow} from 'colorette';
+import fs from 'node:fs/promises';
+import yargs from 'yargs';
+import {hideBin} from 'yargs/helpers';
 
-const check = require('./check-arg');
-const files = require('../../config');
-const {argv} = require('yargs');
-const {blue, green, red, yellow} = require('colorette');
-const {promises: fs} = require('fs');
+import files from '../../config.js';
+import check from './check-arg.js';
+
+const {argv} = yargs(hideBin(process.argv));
 
 const grEqual = '>=';
 
 /** @returns {Array[]} */
-const replaceVersion = async () => {
+export default async () => {
     let version = argv._[0] ? String(argv._[0]) : '';
     let grEqualFound;
 
@@ -76,5 +78,3 @@ const replaceVersion = async () => {
         }),
     );
 };
-
-module.exports = replaceVersion;
