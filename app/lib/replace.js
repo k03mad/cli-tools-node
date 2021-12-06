@@ -1,4 +1,4 @@
-import {blue, green, red, yellow} from 'colorette';
+import chalk from 'chalk';
 import fs from 'node:fs/promises';
 import yargs from 'yargs';
 import {hideBin} from 'yargs/helpers';
@@ -7,6 +7,7 @@ import files from '../../config.js';
 import check from './check-arg.js';
 
 const {argv} = yargs(hideBin(process.argv));
+const {blue, green, red, yellow} = chalk;
 
 const grEqual = '>=';
 

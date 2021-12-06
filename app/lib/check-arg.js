@@ -1,7 +1,8 @@
 import utils from '@k03mad/utils';
-import {dim, gray, green, red, yellow} from 'colorette';
+import chalk from 'chalk';
 
 const {request} = utils;
+const {dim, gray, green, red, yellow} = chalk;
 
 /** @param {string} version */
 export default async version => {
