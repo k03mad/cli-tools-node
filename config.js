@@ -1,6 +1,4 @@
 export default {
-    /* eslint-disable jsdoc/require-jsdoc */
-
     '.nvmrc': {
         replaceString: /(?<version>.+)/,
         replaceValue: version => version,

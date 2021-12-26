@@ -1,7 +1,6 @@
-import utils from '@k03mad/util';
+import {request} from '@k03mad/util';
 import chalk from 'chalk';
 
-const {request} = utils;
 const {dim, gray, green, red, yellow} = chalk;
 
 /** @param {string} version */
