@@ -7,7 +7,7 @@ const {dim, gray, green, red, yellow} = chalk;
 export default async version => {
     if (!version) {
         throw new Error(
-            `The Node.JS version is not specified, example usage:\n${gray('$')} ${green('node-chv 14')}`,
+            `The Node.JS version is not specified, example usage:\n${gray('$')} ${green('mad_node_ver 14')}`,
         );
     }
 
