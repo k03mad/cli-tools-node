@@ -24,58 +24,49 @@ export default async () => {
     await check(version);
 
     return Promise.all(
-        Object.entries(files).map(async ([file, opts]) => {
-            const setVersion = opts.supportGrEqual && grEqualFound
-                ? grEqual + version
-                : version;
+        Object
+            .entries(files)
+            .map(async ([file, opts]) => {
+                const setVersion = opts.supportGrEqual && grEqualFound
+                    ? grEqual + version
+                    : version;
 
-            let content;
+                let content;
 
-            try {
-                content = await fs.readFile(file, {encoding: 'utf-8'});
-            } catch (err) {
-                if (err.code === 'ENOENT') {
+                try {
+                    content = await fs.readFile(file, {encoding: 'utf-8'});
+                } catch (err) {
+                    if (err.code === 'ENOENT') {
+                        return;
+                    }
+
+                    throw err;
+                }
+
+                const matched = content.match(opts.replaceString) || [];
+
+                if (matched?.groups?.version === setVersion) {
                     return [
                         yellow('!'), blue(file),
-                        'file does not exist',
+                        `version already in use: ${yellow(setVersion)}`,
+                    ];
+
+                } else if (matched?.groups?.version) {
+                    await fs.writeFile(file, content.replace(
+                        opts.replaceString,
+                        opts.replaceValue(setVersion),
+                    ));
+
+                    return [
+                        green('✓'), blue(file),
+                        `${yellow(matched.groups.version.trim())} → ${green(setVersion)}`,
                     ];
                 }
 
-                throw err;
-            }
-
-            const matched = content.match(opts.replaceString) || [];
-
-            if (
-                matched
-                && matched.groups
-                && matched.groups.version === setVersion
-            ) {
                 return [
-                    yellow('!'), blue(file),
-                    `version already in use: ${yellow(setVersion)}`,
+                    red('✗'), blue(file),
+                    `version not found with regexp: ${yellow(opts.replaceString)}`,
                 ];
-
-            } else if (
-                matched
-                && matched.groups
-                && matched.groups.version
-            ) {
-                await fs.writeFile(file, content.replace(
-                    opts.replaceString,
-                    opts.replaceValue(setVersion),
-                ));
-
-                return [
-                    green('✓'), blue(file),
-                    `${yellow(matched.groups.version.trim())} → ${green(setVersion)}`,
-                ];
-            }
-
-            return [
-                red('✗'), blue(file),
-                `version not found with regexp: ${yellow(opts.replaceString)}`,
-            ];
-        }),
+            }),
     );
 };
