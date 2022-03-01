@@ -15,7 +15,7 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@k03mad/util": "4.0.3",
+    "@k03mad/util": "4.4.1",
     "as-table": "1.0.55",
     "chalk": "5.0.0",
     "yargs": "17.3.1"
